@@ -37,14 +37,11 @@ public class OperationsAdapter extends RecyclerView.Adapter<OperationsAdapter.Op
     @Override
     public void onBindViewHolder(@NonNull OperationsViewHolder holder, int position) {
         Operations operations = operationsList.get(position);
-        holder.binding.tvAmount.setText(operations.amount);
+        holder.binding.tvAmount.setText(operations.details);
         holder.binding.tvItemDate.setText(operations.date);
-        holder.binding.tvItemDetails.setText(operations.details);
+        holder.binding.tvItemDetails.setText(operations.amount);
         holder.binding.tvItemname.setText(operations.categoryName);
         holder.binding.tvId.setText(String.valueOf(operations.id));
-
-//        Picasso.get().load(operations.employee.imageUrl).into(holder.binding.imag);
-
         holder.binding.card.setOnClickListener(v -> {
             clickItem.onClick(operations);
         });
